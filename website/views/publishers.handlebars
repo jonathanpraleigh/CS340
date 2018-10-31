@@ -1,0 +1,37 @@
+<h1>Publishers:</h1>
+<h3>Add Publisher</h3>
+<form id="addPublisher" action="/publisher" method="post">
+  Name: <input type="text" name="name"><br>
+  Yr Founded: <input type="number" name="yr_founded"><br>
+  HQ Country: <input type="text" name="hq_country"><br>
+</form>
+<button onclick="addPublisher()">Add</button>
+
+<h3>Filter Publishers</h3>
+<form id="filterPublisher" action="/publisher" method="post">
+  Name: <input type="text" name="name"><br>
+  Yr Founded: <input type="number" name="yr_founded"><br>
+  HQ Country: <input type="text" name="hq_country"><br>
+</form>
+<button onclick="filterPublisher()">Filter</button>
+
+<table>
+    <thead>
+        <th>Database:</th>
+        <th>Name</th>
+        <th>Yr Founded</th>
+        <th>HQ</th>
+    </thead>
+    <tbody>
+        {{#each publisher}}
+        <tr>
+            <td></td>
+            <td>{{name}}</td>
+            <td>{{yr_founded}}</td>
+            <td>{{hq_country}}</td>
+            <td><button onclick="deletePublisher({{id}})">Delete</button></td>
+            <td><a href="/publisher/{{id}}">Update</a></td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

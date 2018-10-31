@@ -1,0 +1,8 @@
+<!--use correct stuff below -->
+<h1>Update {{developer.name}}:</h1>
+<form id="update-developer" action="/developer" method="post">
+    Name: <input type="text" name="name" value="{{developer.name}}"><br>
+    Yr Founded: <input type="number" name="yr_founded" value="{{developer.yr_founded}}"><br>
+    HQ Country: <input type="text" name="hq_country" value="{{developer.hq_country}}"><br>
+</form>
+<button onclick="updateDeveloper({{developer.id}})">Update</button>

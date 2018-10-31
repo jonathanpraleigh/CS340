@@ -1,0 +1,24 @@
+<!--use correct stuff below -->
+<h3>Update {{game.name}}:</h3>
+<form id="update-game" action="/game" method="post">
+    Name: <input type="text" name="name" value="{{game.name}}"><br>
+    Published: <input type="number" name="published" value="{{game.published}}"><br>
+    Genre: <select name="genre" id="genre-selector">
+        {{#each genre}}
+        <option value="{{id}}">{{genre.name}}</option>
+        {{/each}}
+    </select><br>
+    Developer: <select name="developer" id="developer-selector">
+        {{#each developer}}
+        <option value="{{id}}">{{developer.name}}</option>
+        {{/each}}
+    </select><br>
+    Publisher: <select name="publisher" id="publisher-selector">
+        {{#each publisher}}
+        <option value="{{id}}">{{publisher.name}}</option>
+        {{/each}}
+    </select><br>
+    Rating: <input type="number" name="rating" value="{{game.rating}}"><br>
+    Hrs Played: <input type="number" name="hrs_played" value="{{game.hrs_played}}"><br>
+</form>
+<button onclick="updateGame({{game.id}})">Update</button>

@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+  <title>Steam Library Database</title>
+  {{#each jsscripts}}
+  <script src="/static/{{this}}"></script>
+  {{/each}}
+</head>
+<body>
+  <h1>Steam Database</h1>
+  <p>Database:</p>
+  <form name="database_select">
+    <select onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);">
+      <option value="">Choose</option>
+      <option value="http://flip3.engr.oregonstate.edu:64654/games">Games</option>
+      <option value="http://flip3.engr.oregonstate.edu:64654/genres">Genres</option>
+      <option value="http://flip3.engr.oregonstate.edu:64654/developers">Developers</option>
+      <option value="http://flip3.engr.oregonstate.edu:64654/publishers">Publishers</option>
+    </select>
+  </form>
+  {{{body}}}
+</body>
+</html>

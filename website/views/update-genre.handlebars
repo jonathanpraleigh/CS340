@@ -1,0 +1,9 @@
+<!--use correct stuff below -->
+<h1>Update {{genre.name}}:</h1>
+<form id="update-genre" action="/genre" method="post">
+    Name: <input type="text" name="name" value="{{genre.name}}"><br>
+</form>
+<button onclick="updateGenre({{genre.id}})">Update</button>
+
+<th>Insert:</th>
+<th>Name</th>

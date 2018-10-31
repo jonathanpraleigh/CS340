@@ -1,0 +1,8 @@
+<!--use correct stuff below -->
+<h1>Update {{publisher.name}}:</h1>
+<form id="update-publisher" action="/publisher" method="post">
+    Name: <input type="text" name="name" value="{{publisher.name}}"><br>
+    Yr Founded: <input type="number" name="yr_founded" value="{{publisher.yr_founded}}"><br>
+    HQ Country: <input type="text" name="hq_country" value="{{publisher.hq_country}}"><br>
+</form>
+<button onclick="updatePublisher({{publisher.id}})">Update</button>

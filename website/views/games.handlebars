@@ -1,0 +1,78 @@
+<h1>Games:</h1>
+<h3>Add Game:</h3>
+<form id="addGame" action="/game" method="post">
+    Name: <input type="text" name="name"><br>
+    Published: <input type="number" name="yr_published"><br>
+    Genre: <select name="genre" id="genre-selector">
+        {{#each genre}}
+        <option value="{{id}}">{{genre.name}}</option>
+        {{/each}}
+    </select><br>
+    Developer: <select name="developer" id="developer-selector">
+        {{#each developer}}
+        <option value="{{id}}">{{developer.name}}</option>
+        {{/each}}
+    </select><br>
+    Publisher: <select name="publisher" id="publisher-selector">
+        {{#each publisher}}
+        <option value="{{id}}">{{publisher.name}}</option>
+        {{/each}}
+    </select><br>
+    Rating: <input type="number" name="rating"><br>
+    Hrs Played: <input type="number" name="hrs_played"><br>
+</form>
+<button onclick="addGame()">Add</button>
+
+<h3>Filter Games:</h3>
+<form id="filterGame" action="/game" method="post">
+    Name: <input type="text" name="name"><br>
+    Published: <input type="number" name="published"><br>
+    Genre: <select name="genre" id="genre-selector">
+        {{#each genre}}
+        <option value="{{id}}">{{genre.name}}</option>
+        {{/each}}
+    </select><br>
+    Developer: <select name="developer" id="developer-selector">
+        {{#each developer}}
+        <option value="{{id}}">{{developer.name}}</option>
+        {{/each}}
+    </select><br>
+    Publisher: <select name="publisher" id="publisher-selector">
+        {{#each publisher}}
+        <option value="{{id}}">{{publisher.name}}</option>
+        {{/each}}
+    </select><br>
+    Rating: <input type="number" name="rating"><br>
+    Hrs Played: <input type="number" name="hrs_played"><br>
+</form>
+<button onclick="filterGame()">Filter</button>
+
+
+<table>
+    <thead>
+        <th>Database:</th>
+        <th>Name</th>
+        <th>Published</th>
+        <th>Genre</th>
+        <th>Developer</th>
+        <th>Publisher</th>
+        <th>Rating</th>
+        <th>Hours Played</th>
+    </thead>
+    <tbody>
+        {{#each game}}
+        <tr>
+            <td></td>
+            <td>{{name}}</td>
+            <td>{{published_yr}}</td>
+            <td>{{genre}}</td>
+            <td>{{developer}}</td> <!--for each here?-->
+            <td>{{publisher}}</td><!--for each here?-->
+            <td>{{rating}}</td>
+            <td>{{hrs_played}}</td>
+            <td><button onclick="deleteGame({{id}})">Delete</button></td>
+            <td><a href="/game/{{id}}">Update</a></td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

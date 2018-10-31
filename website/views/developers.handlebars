@@ -1,0 +1,37 @@
+<h1>Developers:</h1>
+<h3>Add Developer</h3>
+<form id="addDeveloper" action="/developer" method="post">
+  Name: <input type="text" name="name"><br>
+  Year Founded: <input type="number" name="yr_founded"><br>
+  HQ Country: <input type="text" name="hq_country"><br>
+</form>
+<button onclick="addDeveloper()">Add</button>
+
+<h3>Filter Developers</h3>
+<form id="filterDeveloper" action="/developer" method="post">
+  Name: <input type="text" name="name"><br>
+  Year Founded: <input type="number" name="yr_founded"><br>
+  Headquarters: <input type="text" name="hq_country"><br>
+</form>
+<button onclick="filterDeveloper()">Filter</button>
+
+<table>
+    <thead>
+        <th>Database:</th>
+        <th>Name</th>
+        <th>Year Founded</th>
+        <th>Headquarters</th>
+    </thead>
+    <tbody>
+        {{#each developer}}
+        <tr>
+            <td></td>
+            <td>{{name}}</td>
+            <td>{{yr_founded}}</td>
+            <td>{{hq_country}}</td>
+            <td><button onclick="deleteDeveloper({{id}})">Delete</button></td>
+            <td><a href="/developer/{{id}}">Update</a></td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

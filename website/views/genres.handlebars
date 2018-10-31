@@ -1,0 +1,29 @@
+<h1>Genres:</h1>
+<h3>Add Genre:</h3>
+<form id="addGenre" action="/genre" method="post">
+    Name: <input type="text" name="name"><br>
+</form>
+<button onclick="addGenre()">Update</button>
+
+<h3>Filter Genres:</h3>
+<form id="filterGenre" action="/genre" method="post">
+    Name: <input type="text" name="name"><br>
+</form>
+<button onclick="filterGenre()">Filter</button>
+
+<table>
+    <thead>
+        <th>Database:</th>
+        <th>Name</th>
+    </thead>
+    <tbody>
+        {{#each genre}}
+        <tr>
+            <td></td>
+            <td>{{name}}</td>
+            <td><button onclick="deleteGenre({{id}})">Delete</button></td>
+            <td><a href="/genre/{{id}}">Update</a></td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
